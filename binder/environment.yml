@@ -1,0 +1,16 @@
+name: pypi_package_dev
+channels:
+  - conda-forge
+dependencies:
+  - black
+  - flake8
+  - hatch
+  - jupyterlab=4.2.4
+  - jupyterlab-spellchecker=0.8.4
+  - matplotlib=3.9.1
+  - nbqa
+  - numpy=2.0.1
+  - pandas=2.2.2
+  - pip=24.0
+  - python=3.11
+  - pytest=8.3.2
