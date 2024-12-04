@@ -1,6 +1,6 @@
 # **Developer README**
 
-Welcome to the developer documentation for this project. This guide provides an in-depth overview of the development workflow. 
+Welcome to the developer documentation for this project and how to set it up. This guide provides an in-depth overview of the development workflow. 
 ---
 
 ## **1. Project Structure**
@@ -8,6 +8,37 @@ Welcome to the developer documentation for this project. This guide provides an 
 The following structure outlines the layout of the project:
 
 ```bash
+
+## Getting Started
+
+To contribute to this project, follow these steps to set up your development environment.
+
+### 1. Clone the repository
+
+```bash
+
+git https://github.com/KaysHaydock/HPDM139_2.git
+cd HPDM139_2
+
+2. Set up the environment
+
+You can set up the development environment using either conda.
+
+Using Conda
+
+Create and activate the conda environment:
+
+conda env create -f binder/environment.yml
+conda activate pypi_package_dev
+
+
+2. Install the package
+
+For local development, you can install the package in editable mode:
+
+pip install -e .
+
+Development Setup
 project/
 ├── LICENSE
 ├── binder/
