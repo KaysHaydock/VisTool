@@ -1,13 +1,13 @@
 # **Developer README**
 
-Welcome to the developer documentation for this project. This guide provides an in-depth overview of the development workflow, project structure, and best practices, including unit testing with `pytest`.
-
+Welcome to the developer documentation for this project. This guide provides an in-depth overview of the development workflow. 
 ---
 
 ## **1. Project Structure**
 
 The following structure outlines the layout of the project:
 
+```bash
 project/
 ├── LICENSE
 ├── binder/
