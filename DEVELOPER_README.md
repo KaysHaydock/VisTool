@@ -20,8 +20,8 @@ Welcome to the developer documentation for this project and how to set it up. Th
 
 -- Wrangling of Data --
 1. Clean data (pre-processing): Rename any columns
-2. Give the user option to remove any empty cells they do not want
-3. Give the user option to fill in any empty cells with the average/mean
+2. Give the user option to remove any empty cells they do not want - KH
+3. Give the user option to fill in any empty cells with the average/mean - KH
 4. Dimension reduction of the dataset
 5. If a user has categorical data, give the option to user to encode - GA
 
