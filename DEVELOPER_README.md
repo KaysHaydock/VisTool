@@ -15,7 +15,7 @@ Welcome to the developer documentation for this project and how to set it up. Th
 -- Customise Visualisation of data --
 1. Choosing two columns on a dataset to visualise on a graph - KH
 2. Choosing what type of graph the user would like (Bar, Scatter etc) - KH
-3. Apply more then one line of data on a graph (overlays) - GA 
+3. Apply more then one line of data on a graph (overlays) - KH
 4. Use PyWidgets to adjust graph types and configurations perhaps - GA
 
 -- Wrangling of Data --
