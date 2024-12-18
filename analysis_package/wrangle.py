@@ -12,7 +12,7 @@ Features:
 
 import pandas as pd
 
-def clean_data(data: pd.DataFrame, remove_columns: list = None, fill_with: str = None) -> pd.DataFrame:
+def clean_data(data: pd.DataFrame, remove_columns: list = None, fill_with: str = None, apply_to: str = 'columns') -> pd.DataFrame:
     """
     Cleans the dataset by either:
         - Dropping all rows with NaN values in specific columns.
@@ -23,30 +23,42 @@ def clean_data(data: pd.DataFrame, remove_columns: list = None, fill_with: str =
         remove_columns (list, optional): List of column names to drop rows with NaN values in those columns.
         fill_with (str, optional): Strategy to fill NaN values. Options: 'mean' or 'average'. 
             If 'mean' or average' is selected, NaN values will be replaced with the column's mean value.
+        apply_to (str, optional): Specifies whether to apply the operation to 'columns' or 'rows'. Default is 'columns'.
 
     Returns:
         pd.DataFrame: The cleaned dataset.
 
     Example:
-        >>> clean_data(data, remove_columns=['A'])
-        >>> clean_data(data, fill_with='mean')
+        >>> clean_data(data, remove_columns=['A'], apply_to='columns')
+        >>> clean_data(data, fill_with='mean', apply_to='rows')
     """
 
-    if remove_columns:
-        # Drop rows with NaN in specific columns
-        data = data.dropna(subset=remove_columns).reset_index(drop=True)
-        print(f"Rows with NaN in columns {remove_columns} were dropped.")
+    if apply_to == 'columns':
+        if remove_columns:
+            # Drop rows with NaN in specific columns
+            data = data.dropna(subset=remove_columns).reset_index(drop=True)
+            print(f"Rows with NaN in columns {remove_columns} were dropped.")
+        
+        elif fill_with == "mean" or fill_with == "average":
+            # Fill NaN values with column mean
+            data = data.fillna(data.mean(numeric_only=True))
+            print(f"NaN values filled with column mean.")
+        
+        else:
+            # Default behavior: Drop all rows with any NaN values in the columns
+            data = data.dropna().reset_index(drop=True)
+            print("Rows with any NaN values were dropped.")
     
-    elif fill_with == "mean" or fill_with == "average":
-        # Fill NaN values with column mean
-        data = data.fillna(data.mean(numeric_only=True))
-        print(f"NaN values filled with column mean.")
-
-    else:
-        # Default behavior: Drop all rows with any NaN values
-        data = data.dropna().reset_index(drop=True)
-        print("Rows with any NaN values were dropped.")
-
+    elif apply_to == 'rows':
+        if fill_with == "mean" or fill_with == "average":
+            # Fill NaN values row-wise (for each row, use the mean of the row's values)
+            data = data.apply(lambda row: row.fillna(row.mean()), axis=1)
+            print(f"NaN values filled with row mean.")
+        else:
+            # Default behavior: Drop rows that contain NaN values
+            data = data.dropna(axis=0).reset_index(drop=True)
+            print("Rows with any NaN values were dropped.")
+    
     return data
 
 def filter_data(data: pd.DataFrame, condition: str) -> pd.DataFrame:
