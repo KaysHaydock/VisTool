@@ -29,7 +29,7 @@ Welcome to the developer documentation for this project and how to set it up. Th
 1. Option to download and save the data to a location on their PC - GA
 
 ## Suggest Feature idea 
-1.interactive dashboard 
+1.interactive dashboard - GA
 
 ## In Progress
 
