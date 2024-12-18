@@ -6,9 +6,9 @@ Features:
         2. `plot_scatter`: Creates a scatter plot of two columns.
         3. `plot_correlation_matrix`: Plots a heatmap of correlations between numeric columns.
         4. `plot_line`: Plots a line chart for time-series data.
+        5. `option`: To save plots to a file.
     - Suggested:
         - Add support for time-series visualizations.
-        - Add an option to save plots to a file.
 """
 
 import matplotlib.pyplot as plt
@@ -69,6 +69,7 @@ def plot_scatter(data: pd.DataFrame, x_column: str, y_column: str, save_path: st
     plt.title(f"Scatter Plot of {x_column} vs {y_column}")
     plt.xlabel(x_column)
     plt.ylabel(y_column)
+    plt.grid(True)
     
     # Show the plot only once
     if save_path is None:
