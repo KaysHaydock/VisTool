@@ -13,15 +13,15 @@ Welcome to the developer documentation for this project and how to set it up. Th
 4. Concatenating two datasets together - Done
 
 -- Customise Visualisation of data --
-1. Choosing two columns on a dataset to visualise on a graph - KH
-2. Choosing what type of graph the user would like (Bar, Scatter etc) - KH
+1. Choosing two columns on a dataset to visualise on a graph - KH Done
+2. Choosing what type of graph the user would like (Bar, Scatter etc) - KH Done
 3. Apply more then one line of data on a graph (overlays) - KH
 4. Use PyWidgets to adjust graph types and configurations perhaps - GA
 
 -- Wrangling of Data --
 1. Clean data (pre-processing): Rename any columns
-2. Give the user option to remove any empty cells they do not want - KH
-3. Give the user option to fill in any empty cells with the average/mean - KH
+2. Give the user option to remove any empty cells they do not want - KH Done
+3. Give the user option to fill in any empty cells with the average/mean - KH Done
 4. Dimension reduction of the dataset
 5. If a user has categorical data, give the option to user to encode - GA
 
