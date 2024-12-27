@@ -19,14 +19,14 @@ Welcome to the developer documentation for this project and how to set it up. Th
 4. Use PyWidgets to adjust graph types and configurations perhaps - GA
 
 -- Wrangling of Data --
-1. Clean data (pre-processing): Rename any columns
+1. Clean data (pre-processing): Rename any columns - Done
 2. Give the user option to remove any empty cells they do not want - KH Done
 3. Give the user option to fill in any empty cells with the average/mean - KH Done
 4. Dimension reduction of the dataset
-5. If a user has categorical data, give the option to user to encode - GA
+5. If a user has categorical data, give the option to user to encode - GA Done
 
 -- Downloading of Data --
-1. Option to download and save the data to a location on their PC - GA
+1. Option to download and save the data to a location on their PC - GA Done
 
 ## Suggest Feature idea 
 1.interactive dashboard - GA
