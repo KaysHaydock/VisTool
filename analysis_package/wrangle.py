@@ -5,12 +5,14 @@ Features:
         1. `clean_data`: Cleans the dataset by dropping NaN values/filling with mean.
         2. `filter_data`: Filters rows based on a condition.
         3. `rename_columns`: Renames columns in the dataset.
+        4. label_encode : Perform label encoding on a categorical column using Pandas and NumPy
     - Suggested:
         - Add functionality to standardize column names.
         - Implement feature scaling and encoding.
 """
 
 import pandas as pd
+import numpy as np
 
 def clean_data(data: pd.DataFrame, remove_columns: list = None, fill_with: str = None, apply_to: str = 'columns') -> pd.DataFrame:
     """
@@ -96,3 +98,26 @@ def rename_columns(data: pd.DataFrame, columns_mapping: dict) -> pd.DataFrame:
     renamed_data = data.rename(columns=columns_mapping)
     print("Columns renamed successfully.")
     return renamed_data
+
+
+
+def label_encode(data, column):
+    """
+    Perform label encoding on a categorical column using Pandas and NumPy.
+
+    Args:
+        data (pd.DataFrame): The dataset containing the categorical column.
+        column (str): The name of the column to encode.
+
+    Returns:
+        pd.DataFrame: The dataset with the encoded column.
+    """
+    if column not in data.columns:
+        raise ValueError(f"Column '{column}' not found in the dataset.")
+
+    # Label Encoding: Convert categories to integer labels
+    data[column] = data[column].astype('category').cat.codes
+    print(f"Label encoding applied to column: {column}")
+    return data
+
+
