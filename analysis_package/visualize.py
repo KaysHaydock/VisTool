@@ -32,9 +32,7 @@ def plot_histogram(
 
     Example:
         >>> plot_histogram(data, "age", save_path="histogram.png")
-    """
-    column = column.lower() 
-    
+    """    
     if column not in data.columns:
         raise ValueError(f"Column '{column}' not found in the dataset.")
     
@@ -78,10 +76,7 @@ def plot_scatter(
 
     Example:
         >>> plot_scatter(data, "age", "income", save_path="scatter.png")
-    """
-    x_column = x_column.lower()  
-    y_column = y_column.lower() 
-    
+    """    
     if x_column not in data.columns:
         raise ValueError(f"Column '{x_column}' not found in the dataset.")
     elif y_column not in data.columns:
@@ -166,9 +161,6 @@ def plot_line(
     Example:
         >>> plot_line(data, "date", "price", save_path="line_chart.png")
     """
-    x_column = x_column.lower()
-    y_column = y_column.lower() 
-    
     if x_column not in data.columns or y_column not in data.columns:
         raise ValueError(
             f"Columns '{x_column}' or '{y_column}' not found in the dataset."
@@ -221,10 +213,7 @@ def plot_overlay(
         >>> plot_overlay(
                 data, ["A", "B"], ["line", "bar"], save_path="overlay_plot.png"
             )
-    """
-    columns = [col.lower() for col in columns] 
-    plot_types = [pt.lower() for pt in plot_types] 
-    
+    """    
     if line_colours is None:
         line_colours = ["blue", "green", "purple"]
     if bar_colours is None:
@@ -242,7 +231,7 @@ def plot_overlay(
         if col not in data.columns:
             raise ValueError(f"Column '{col}' not found in the dataset.")
         
-        if plot_type == "line":
+        if plot_type.lower() == "line":
             plt.plot(
                 data.index, 
                 data[col], 
@@ -250,7 +239,7 @@ def plot_overlay(
                 marker='o', 
                 color=line_colours[i % len(line_colours)]  
             )
-        elif plot_type == "bar":
+        elif plot_type.lower() == "bar":
             plt.bar(
                 data.index, 
                 data[col], 
