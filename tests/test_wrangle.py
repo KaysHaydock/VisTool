@@ -18,13 +18,28 @@ def test_clean_data():
         
 def test_filter_data():
     data = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
+
+    # Valid filter condition
     filtered = filter_data(data, "A > 1")
     assert len(filtered) == 2  # Only rows with `A > 1` remain
     assert filtered["A"].min() > 1
     
+    # Test invalid condition (edge case)
+    # Ensure the function raises a ValueError when the condition is invalid
+    with pytest.raises(ValueError):
+        filter_data(data, "A > non_numeric")  # Invalid condition: non-numeric value
     
 def test_rename_columns():
+    # Valid column renaming
     data = pd.DataFrame({"old_col": [1, 2]})
     renamed = rename_columns(data, {"old_col": "new_col"})
     assert "new_col" in renamed.columns
     assert "old_col" not in renamed.columns
+    
+    # Test invalid column name in columns_mapping
+    data_invalid = pd.DataFrame({"old_col": [1, 2]})
+    renamed_invalid = rename_columns(data_invalid, {"invalid_col": "new_col"})
+    
+    # Ensure the original dataframe is unchanged when invalid column is provided
+    assert "invalid_col" not in renamed_invalid.columns
+    assert "old_col" in renamed_invalid.columns
