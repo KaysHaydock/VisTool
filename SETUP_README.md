@@ -1,4 +1,4 @@
-# **Developer README**
+# **Developer SETUP README**
 
 Welcome to the developer documentation for this project and how to set it up. This guide provides an in-depth overview of the development workflow. 
 ---
