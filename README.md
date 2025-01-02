@@ -30,8 +30,5 @@ The repository is organised as follows:
 6. **`LICENSE`**  
    The project is licensed under the MIT Licence.  
 
-7. **`README.md`**  
-   This file provides an overview of the project, its goals, and the included files.  
-
-8. **`pyproject.toml`**  
+7. **`pyproject.toml`**  
    Contains metadata and configurations for building the package.  
