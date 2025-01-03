@@ -40,7 +40,7 @@ Navigate to the notebooks/ folder and open example_usage.ipynb:
 jupyter notebook notebooks/example_usage.ipynb
 ```
 
-5. Development Setup
+5. Project Structure
 ```bash
 project/
 ├── LICENSE
