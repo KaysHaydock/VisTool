@@ -11,7 +11,7 @@ To contribute to this project or run this package, follow these steps to set up 
 ### 1. Clone the repository to your local machine
 
 ```bash
-git https://github.com/KaysHaydock/HPDM139_2.git
+git https://github.com/KaysHaydock/VisTool.git
 cd HPDM139_2
 ```
 
