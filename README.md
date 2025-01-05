@@ -18,7 +18,7 @@ The repository is organised as follows:
 
 3. **`notebooks/`**  
    - **`example_usage.ipynb`**: Demonstrates how to interact with the package's functions and provides examples of analyses and visualisations.  
-   - Additional notebook serving as documentation, including a user guide and a tutorial for using the package.  
+   - **`documentatiob.ipynb`**: Additional notebook serving as documentation, including a user guide and a tutorial for using the package.  
 
 4. **`tests/`**  
    - Four Python files containing Pytest-based unit tests for the core modules.  
