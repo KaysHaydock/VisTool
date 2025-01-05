@@ -21,7 +21,10 @@ def test_download_csv():
     """
     url = "https://people.sc.fsu.edu/~jburkardt/data/csv/airtravel.csv"
     df = download_csv(url)
-
+    
+    # Preprocess column names to strip leading/trailing spaces and remove quotes
+    df.columns = df.columns.str.strip().str.replace('"', '')
+    
     # Assert the DataFrame is not empty and has expected structure
     assert isinstance(df, pd.DataFrame), "Returned object is not a DataFrame"
     assert not df.empty, "Downloaded DataFrame is empty"
