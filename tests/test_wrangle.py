@@ -23,11 +23,11 @@ def test_filter_data():
     filtered = filter_data(data, "A > 1")
     assert len(filtered) == 2  # Only rows with `A > 1` remain
     assert filtered["A"].min() > 1
-    
+
     # Test invalid condition (edge case)
-    # Ensure the function raises a ValueError when the condition is invalid
-    with pytest.raises(ValueError):
-        filter_data(data, "A > non_numeric")  # Invalid condition: non-numeric value
+    # Ensure the function raises a pandas.errors.UndefinedVariableError when the condition references a non-existent column
+    with pytest.raises(pd.errors.UndefinedVariableError):
+        filter_data(data, "C > 1")  # Column 'C' does not exist
     
 def test_rename_columns():
     # Valid column renaming
