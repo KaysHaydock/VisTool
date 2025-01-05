@@ -21,11 +21,17 @@ def test_download_csv():
     """
     url = "https://people.sc.fsu.edu/~jburkardt/data/csv/airtravel.csv"
     df = download_csv(url)
-    
-    # Assert the DataFrame is not empty and has expected columns
+
+    # Assert the DataFrame is not empty and has expected structure
     assert isinstance(df, pd.DataFrame), "Returned object is not a DataFrame"
     assert not df.empty, "Downloaded DataFrame is empty"
-    assert "JAN" in df.columns, "Expected column 'JAN' not found in DataFrame"
+
+    # Validate the column names
+    expected_columns = ["Month", "1958", "1959", "1960"]
+    assert list(df.columns) == expected_columns, f"Unexpected columns: {df.columns}"
+
+    # Check for specific data within the 'Month' column
+    assert "JAN" in df["Month"].values, "Expected value 'JAN' not found in 'Month' column"
 
 def test_download_invalid_url():
     """
