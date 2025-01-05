@@ -12,7 +12,7 @@ To contribute to this project or run this package, follow these steps to set up 
 
 ```bash
 git https://github.com/KaysHaydock/VisTool.git
-cd HPDM139_2
+cd VisTool
 ```
 
 2. Set up the environment
