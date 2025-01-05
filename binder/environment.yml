@@ -1,4 +1,4 @@
-name: pypi_package_dev
+name: vistool_env
 channels:
   - conda-forge
 dependencies:
