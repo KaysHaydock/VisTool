@@ -21,7 +21,7 @@ You can set up the development environment using conda.
 
 ```bash
 conda env create -f binder/environment.yml
-conda activate pypi_package_dev
+conda activate vistool_env
 ```
 
 3. Install the package
