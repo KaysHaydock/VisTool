@@ -120,7 +120,20 @@ def plot_correlation_matrix(
     Example:
          >>> plot_correlation_matrix(data, save_path="correlation_matrix.png")
     """
-    correlation_matrix = data.corr()
+    # Check for non-numeric columns
+    if not all(pd.api.types.is_numeric_dtype(data[col]) for col in data.columns):
+         # Collect non-numeric columns
+        non_numeric_cols = [col for col in data.columns if not pd.api.types.is_numeric_dtype(data[col])]
+        # If there are non-numeric columns, raise an error and exit the function
+        if non_numeric_cols:
+            print(f"Error: The following columns are non-numeric: {non_numeric_cols}")
+            return 
+   
+    # Select only numeric columns
+    numeric_data = data.select_dtypes(include=['number'])
+    
+    # Calculate the correlation matrix
+    correlation_matrix = numeric_data.corr()
     
     # Create the heatmap plot
     plt.figure(figsize=(16, 10))
