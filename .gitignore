@@ -1,3 +1,6 @@
+# macOS
+*.DS_Store
+
 # Python
 *.pyc
 *.pyo
@@ -6,7 +9,7 @@ __pycache__/
 *.so
 
 # Jupyter Notebook Checkpoints
-.ipynb_checkpoints
+.ipynb_checkpoints/
 
 # VS Code
 .vscode/
