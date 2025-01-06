@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "analysis_package"
+name = "vistool"
 dynamic = ["version"]
 description = "A Python package for data analysis, cleaning, and visualization."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.8"
 authors = [
-    { name = "Guled Abdullahi", email = "gissa8991@gmail.com" },
+    { name = "Guled Abdullahi and Kayleigh Haydock", email = "gissa8991@gmail.com" },
 ]
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -33,9 +33,9 @@ dependencies = [
 Homepage = "https://github.com/KaysHaydock/HPDM139_2/tree/main"
 
 [tool.hatch.version]
-path = "analysis_package/__init__.py"
+path = "vistool/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "analysis_package",   
+    "vistool",   
 ]
