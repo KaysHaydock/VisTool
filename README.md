@@ -6,7 +6,7 @@ VisTool is a Python package designed to provide high-level visualisation tools f
 ## Project Structure
 The repository is organised as follows:  
 
-1. **`analysis_package/`**  
+1. **`vistool/`**  
    Contains the core Python modules and functions, split into four main areas:  
    - **`combine.py`**: Tools for merging and combining datasets.  
    - **`download.py`**: Utilities for downloading and preprocessing data.  
