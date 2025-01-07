@@ -8,7 +8,7 @@ Features:
         3. `rename_columns`: Renames columns in the dataset.
         4. `label_encode`: Perform label encoding on a categorical column using Pandas and NumPy.
     - Suggested:
-        - Add functionality to standardise column names.
+        - Continue devel on interactive dashboard.
         - Implement feature scaling and encoding.
 """
 
@@ -73,6 +73,10 @@ def clean_data(
     
     else:
         raise ValueError("Invalid value for 'apply_to'. Use 'columns' or 'rows'.")
+
+    # Ensure all numeric columns are floats and round to one decimal place
+    numeric_cols = data.select_dtypes(include=['number']).columns
+    data[numeric_cols] = data[numeric_cols].astype(float).round(1)
     
     return data
 
@@ -140,6 +144,9 @@ def label_encode(data, column):
     print(f"Label encoding applied to column: {column}")
     return data
 
+# INTERACTIVE FUNCTIONS - COULD CONTINUE TO DEVELOP
+# The below functions were if we had more time, to continue on developing our 
+# interactive dashboard. This could be developed upon further
 def clean_data_interactive(data: pd.DataFrame):
     """
     Interactive function for cleaning a DataFrame using widgets.
