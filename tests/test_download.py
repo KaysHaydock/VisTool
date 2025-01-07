@@ -1,6 +1,7 @@
 import os
 import pytest
 import pandas as pd
+import warnings
 from vistool.download import (
     download_file,
     download_csv, 
@@ -50,8 +51,7 @@ def test_download_invalid_url():
     invalid_url = "https://invalid-url.com/nonexistent.csv"
     with pytest.raises(Exception):
         download_file(invalid_url, "data/fake.csv")
-
-
+        
 # Test load_csv
 def test_load_csv(tmp_path):
     """
@@ -84,21 +84,27 @@ def test_load_excel(tmp_path):
     """
     Test the functionality of loading an Excel file into a DataFrame.
     """
-    # Create a sample Excel file
-    excel_path = tmp_path / "test_data.xlsx"
-    sample_data = pd.DataFrame({"Name": ["Alice", "Bob"], "Age": [25, 30], "Score": [85, 90]})
-    sample_data.to_excel(excel_path, index=False, sheet_name="Sheet1")
+    with warnings.catch_warnings():
+        warnings.filterwarnings(
+            "ignore",
+            category=DeprecationWarning,
+            message=".*datetime.datetime.utcnow.*"
+        )
+        # Create a sample Excel file
+        excel_path = tmp_path / "test_data.xlsx"
+        sample_data = pd.DataFrame({"Name": ["Alice", "Bob"], "Age": [25, 30], "Score": [85, 90]})
+        sample_data.to_excel(excel_path, index=False, sheet_name="Sheet1")
+        
+        # Load the Excel file
+        df = load_excel(excel_path, sheet_name="Sheet1")
+        
+        # Assertions
+        assert isinstance(df, pd.DataFrame), "Returned object is not a DataFrame"
+        assert not df.empty, "Loaded DataFrame is empty"
+        assert list(df.columns) == ["Name", "Age", "Score"], f"Unexpected columns: {df.columns}"
+        assert df["Name"].iloc[0] == "Alice", "First row 'Name' value is incorrect"
     
-    # Load the Excel file
-    df = load_excel(excel_path, sheet_name="Sheet1")
-    
-    # Assertions
-    assert isinstance(df, pd.DataFrame), "Returned object is not a DataFrame"
-    assert not df.empty, "Loaded DataFrame is empty"
-    assert list(df.columns) == ["Name", "Age", "Score"], f"Unexpected columns: {df.columns}"
-    assert df["Name"].iloc[0] == "Alice", "First row 'Name' value is incorrect"
-    
-    
+# Test invalid Excel File    
 def test_load_excel_invalid_file():
     """
     Test behavior when an invalid Excel file is provided.
