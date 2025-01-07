@@ -1,7 +1,14 @@
 import os
 import pytest
-from vistool.download import download_file,download_csv, load_csv,load_excel, summarize_data
 import pandas as pd
+from vistool.download import (
+    download_file,
+    download_csv, 
+    load_csv,
+    load_excel, 
+    summarize_data
+)
+
 
 def test_download_file(tmp_path):
     """
