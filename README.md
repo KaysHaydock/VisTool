@@ -34,4 +34,6 @@ The repository is organised as follows:
    The project is licensed under the MIT Licence.  
 
 7. **`pyproject.toml`**  
-   Contains metadata and configurations for building the package.  
+   Contains metadata and configurations for building the package.
+
+**Access VisTool via [PyPi](https://pypi.org/project/vistool/)**
