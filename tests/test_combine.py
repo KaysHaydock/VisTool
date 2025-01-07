@@ -1,5 +1,5 @@
 import pandas as pd
-from analysis_package.combine import merge_datasets, concat_datasets
+from vistool.combine import merge_datasets, concat_datasets
 
 def test_merge_datasets():
     data1 = pd.DataFrame({"id": [1, 2, 3], "value1": [10, 20, 30]})
