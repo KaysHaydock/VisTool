@@ -196,39 +196,6 @@ def clean_data_interactive(data: pd.DataFrame):
     display(remove_columns, fill_with, apply_to, button)
 
 
-def filter_data_interactive(data: pd.DataFrame):
-    """
-    Interactive function for filtering a DataFrame using widgets.
-
-    Features:
-    - Allows users to specify a condition to filter rows.
-
-    Parameters:
-    - data (pd.DataFrame): The input dataset.
-
-    Example:
-    ```python
-    filter_data_interactive(data)
-    ```
-    Usage:
-    - Enter a filter condition (e.g., "Age > 30").
-    - Click the "Apply Filter" button to view the filtered dataset.
-    """
-    condition = widgets.Text(
-        placeholder='Enter condition (e.g., Age > 30)',
-        description='Condition:',
-    )
-
-    def apply_filter(b):
-        clear_output(wait=True)
-        updated_data = filter_data(data, condition.value)
-        display(updated_data)
-
-    button = widgets.Button(description="Apply Filter")
-    button.on_click(apply_filter)
-    display(condition, button)
-
-
 
 def filter_data_interactive(data: pd.DataFrame):
     """
