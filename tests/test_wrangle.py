@@ -1,6 +1,11 @@
 import pytest
 import pandas as pd
-from vistool.wrangle import clean_data, filter_data, rename_columns, label_encode
+from vistool.wrangle import(
+    clean_data, 
+    filter_data, 
+    rename_columns,
+    label_encode
+)
 
 def test_clean_data():
     data = pd.DataFrame({"A": [1, None, 3], "B": [4, 5, None]})
@@ -53,7 +58,4 @@ def test_label_encode():
     
     # Test: Apply label encoding on 'Color' column
     encoded_data = label_encode(data, 'Color')
-    assert set(encoded_data['Color'].unique()) == {0, 1, 2}, "Label encoding failed"
-
-
-    
+    assert set(encoded_data['Color'].unique()) == {0, 1, 2}, "Label encoding failed"   
