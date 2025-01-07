@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from analysis_package.visualize import (
+from vistool.visualize import (
     plot_histogram,
     plot_scatter,
     plot_correlation_matrix,
