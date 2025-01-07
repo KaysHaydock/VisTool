@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/KaysHaydock/VisTool.git/HEAD)
+
 # VisTool: A Python Package for Visualising Health Datasets
 
 ## Overview
