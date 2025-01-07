@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/KaysHaydock/HPDM139_2/tree/main"
+Homepage = "https://github.com/KaysHaydock/VisTool/tree/main"
 
 [tool.hatch.version]
 path = "vistool/__init__.py"
