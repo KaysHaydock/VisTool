@@ -20,10 +20,9 @@ The repository is organised as follows:
 
 3. **`notebooks/`**  
    - **`example_usage.ipynb`**: Demonstrates how to interact with the package's functions and provides examples of analyses and visualisations.  
-   - **`documentation.ipynb`**: Additional notebook serving as documentation, including a user guide and a tutorial for using the package.
-   -  **`advanced_example_usage.ipynb.ipynb`**: This is an additional / optional notebook to read if you wish to see a few more advanced way of interacting with the packages functions.
-   -  **`interactive_usage_in_dev.ipynb`**: 
-
+   - **`documentation.ipynb`**: This is an additional notebook serving as documentation, including a user guide and a tutorial for using the package.
+   -  **`advanced_example_usage.ipynb`**: This is an additional/optional notebook to read if you wish to see a few more advanced way of interacting with the packages functions.
+   -  **`interactive_usage_in_dev.ipynb`**: This is an additional notebook for interactive features under development, showcasing the next milestone of the package.
 4. **`tests/`**  
    - Four Python files containing Pytest-based unit tests for the core modules.  
    - An Excel file, **`functional_testing.xlsx`**, documenting functional tests with input-output examples.  
