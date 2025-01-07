@@ -2,17 +2,22 @@ name: vistool_env
 channels:
   - conda-forge
 dependencies:
-  - black
-  - flake8
-  - hatch
-  - jupyterlab=4.2.4
-  - jupyterlab-spellchecker=0.8.4
-  - matplotlib=3.9.1
-  - nbqa
+  - python=3.11
   - numpy=2.0.1
   - pandas=2.2.2
-  - pip=24.0
-  - python=3.11
+  - matplotlib=3.9.1
+  - seaborn=0.12.2
+  - jupyterlab=4.2.4
+  - jupyterlab-spellchecker=0.8.4
   - pytest=8.3.2
-  - seaborn=0.12.2       
-  - panel=0.14.4         
+  - flake8
+  - black
+  - hatch
+  - nbqa
+  - pip=24.0
+  - ipywidgets  
+  - pip:
+    - openpyxl
+    - xlrd
+    - plotly
+    - xlwt
