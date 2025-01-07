@@ -45,9 +45,10 @@ jupyter notebook notebooks/example_usage.ipynb
 project/
 ├── LICENSE
 ├── binder/
-│   ├── environment.yml
+│   └── environment.yml
 ├── pyproject.toml
 ├── README.md
+├── INSTRUCTIONS_README.md
 ├── .gitignore
 ├── analysis_package/
 │   ├── init.py
@@ -56,8 +57,8 @@ project/
 │   ├── visualize.py
 │   ├── wrangle.py
 │   └── data/
-│       └── test_data.csv
-│       └── Monthly_AE_Attendances_Nov_2024
+│       ├── titanic3.xls
+│       └── monthly_ae_attendances_nov_2024
 ├── tests/
 │   ├── test_model.py
 │   ├── test_combine.py
@@ -66,6 +67,7 @@ project/
 │   └── test_wrangle.py
 │   └── functional_testing.xlsx
 ├── notebooks/
-│   └── example_usage.ipynb
+│   ├── example_usage.ipynb
+│   ├── advanced_example_usage.ipynb
 │   └── documentation.ipynb
 ```
