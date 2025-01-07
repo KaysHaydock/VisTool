@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from analysis_package.wrangle import clean_data, filter_data, rename_columns
+from vistool.wrangle import clean_data, filter_data, rename_columns, label_encode
 
 def test_clean_data():
     data = pd.DataFrame({"A": [1, None, 3], "B": [4, 5, None]})
@@ -43,3 +43,17 @@ def test_rename_columns():
     # Ensure the original dataframe is unchanged when invalid column is provided
     assert "invalid_col" not in renamed_invalid.columns
     assert "old_col" in renamed_invalid.columns
+
+
+def test_label_encode():
+    # Sample DataFrame with categorical data
+    data = pd.DataFrame({
+        'Color': ['Red', 'Blue', 'Green', 'Red', 'Blue']
+    })
+    
+    # Test: Apply label encoding on 'Color' column
+    encoded_data = label_encode(data, 'Color')
+    assert set(encoded_data['Color'].unique()) == {0, 1, 2}, "Label encoding failed"
+
+
+    
