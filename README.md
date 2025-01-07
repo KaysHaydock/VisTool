@@ -19,6 +19,7 @@ The repository is organised as follows:
 3. **`notebooks/`**  
    - **`example_usage.ipynb`**: Demonstrates how to interact with the package's functions and provides examples of analyses and visualisations.  
    - **`documentation.ipynb`**: Additional notebook serving as documentation, including a user guide and a tutorial for using the package.
+   -  **`advanced_example_usage.ipynb.ipynb`**: This is an additional / optional notebook to read if you wish to see a few more advanced way of interacting with the packages functions.
    -  **`interactive_usage_in_dev.ipynb`**: 
 
 4. **`tests/`**  
